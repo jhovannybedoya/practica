@@ -48,8 +48,16 @@ class UsuarioController{
         }
     }
 
-    public static function  modificarUsuariocontroller(){
+    public static function  selectUsuariocontroller(){
+        $tabla="prueba";
+       
+        $query=Usuariomodel::selectUsuariomodel($tabla);
         
+        foreach($query as $key=>$value){
+            echo $value["nombre"];
+            echo $value["email"];
+            echo $value["password"];
+        }
     }
 
 

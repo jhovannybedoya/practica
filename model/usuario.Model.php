@@ -18,7 +18,10 @@ class Usuariomodel{
 
     }
 
-    public static function  modificarUsuariomodel($tabla){
-        
-        
+    public static function  selectUsuariomodel($tabla){
+        $resultad=conection::conectar()->prepare("SELECT * FROM $tabla");
+
+        $resultad->execute();
+        return $resultad->fetchAll();
+    }   
 }

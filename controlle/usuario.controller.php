@@ -3,20 +3,26 @@
 class UsuarioController{
     public static function insertUsuarioController(){
         
-        if(isset($_POST["nombre"])){
+        if(isset($_POST["email"])){
+            
             
             $tabla="prueba";
+            $item=$_POST["email"];
 
-            $datos=array(
+            $consult=Usuariomodel::isRepeateMail($tabla, $item);
+            if (!$consult) {
+                var_dump($consult);
+            
+                $datos=array(
                 "nombre"=>$_POST["nombre"],
                 "email"=>$_POST["email"],
                 "password"=>$_POST["password"],
             );
-            $request = Usuariomodel::insertUsuariomodel($tabla,$datos);
+                $request = Usuariomodel::insertUsuariomodel($tabla, $datos);
 
-            //var_dump($request);
-            if ($request== "ok") {
-                echo "
+                //var_dump($request);
+                if ($request== "ok") {
+                    echo "
             
             <script>
             Swal.fire({
@@ -29,9 +35,8 @@ class UsuarioController{
                 }
                 }) 
             </script>";
-            }
-            else {
-                echo "
+                } else {
+                    echo "
             
             <script>
             Swal.fire({
@@ -41,7 +46,19 @@ class UsuarioController{
                 
               })
             </script>";
-            }
+                }
+        }else{
+            echo "
+            <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'error',
+                text: '! TU USUARIO EXISTE!',
+                footer: '<a href>Why do I have this issue?</a>'
+              })
+            </script>
+            ";
+        }
 
             
             
@@ -59,6 +76,7 @@ class UsuarioController{
             echo $value["password"];
         }
     }
+
 
 
 }

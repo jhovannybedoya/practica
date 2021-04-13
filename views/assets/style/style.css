@@ -60,7 +60,6 @@ label {
 button {
     display: block;
     position: relative;
-    left: 50%;
     background-color: darkgoldenrod;
     border-radius: 10%;
     margin: 10px;
@@ -73,7 +72,7 @@ button:hover {
 }
 
 table {
-    font-size: 1.5em;
+    width: auto;
     text-decoration: underline;
     background-color: rgb(209, 15, 25);
 }

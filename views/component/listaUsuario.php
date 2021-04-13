@@ -2,20 +2,25 @@
 
 
  <table width="50%" border="0" align="center">
-    <thead wi>
+    <thead >
       
       <th class="primera_fila">Id</th>
       <th class="primera_fila">Nombre</th>
       <th class="primera_fila">email</th>
       <th class="primera_fila">password</th>
-      <th class= "primera_fila">acciones</th>
+      <th class="primera_fila">acciones</th>
       
     </thead> 
+    <tbody>
 
-    <?php
-    $usuario = new UsuarioController();
-    $usuario ->selectUsuarioController();
-    ?> 
+      <?php
+          $usuario = new UsuarioController();
+          $usuario ->selectUsuarioController();
+      ?> 
+
+    </tbody>
+
+   
 		
    
   </table>

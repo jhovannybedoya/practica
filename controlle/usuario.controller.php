@@ -70,12 +70,22 @@ class UsuarioController{
        
         $query=Usuariomodel::selectUsuariomodel($tabla);
         
-        foreach($query as $key=>$value){
-            echo $value["nombre"];
-            echo $value["email"];
-            echo $value["password"];
+        foreach ($query as $datos => $value) {
+            echo "<tr>";
+            echo "<td>".$value["id"]."<td>";
+            echo "<td>". $value["nombre"]."</td>";
+            echo "<td>". $value["email"]."</td>";
+            echo "<td>". $value["password"]."</td>";
+            echo "<td>
+                <button class = 'actualizar'idActualizar='{$value["id"]}'>Actualizar</button> 
+                <button class='borrar' idBoi86 rrar='{$value["id"]}'> Eliminar</button>
+                 </td>";
+            echo "</tr>";
         }
     }
+    
+
+    
 
 
 

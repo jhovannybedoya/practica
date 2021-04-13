@@ -33,4 +33,11 @@ class Usuariomodel{
         return $resultad->fetch();
 
     }
+    public static function eliminarUsuarioModel($tabla, int $id){
+        $resultad = Conection::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+        $resultad->bindParam(":id",$id, PDO::PARAM_INT);
+        return $resultad->execute();
+    
+
+    }
 }

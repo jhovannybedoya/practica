@@ -9,8 +9,8 @@
     <a href="listaUsuario">
         <li>otro menu</li>
     </a>
-    <a href="">
-        <li>item</li>
+    <a href="tabla">
+        <li>tabla</li>
     </a>
     <a href="">
         <li>item</li>

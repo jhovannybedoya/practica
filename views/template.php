@@ -15,7 +15,8 @@
     if(isset($_GET["route"])){
         if($_GET["route"]=="usuario"||
         $_GET["route"]=="home"||
-        $_GET["route"]=="listaUsuario"){
+        $_GET["route"]=="listaUsuario"||
+        $_GET["route"]=="tablas"){
             include "component/".$_GET["route"].".php";
         }
     }else{
